@@ -1,0 +1,66 @@
+<%- include('parts/header')%>
+    <%- include('parts/navbar')%>
+
+
+        <div class="container">
+
+            <% if(items.length===0) {%>
+                <p class="alert alert-danger"> Aucune Reservation</p>
+                <% } else { %>
+
+                    <table>
+                        <thead>
+                            <td>no</td>
+                            <td>offre</td>
+                            <td>np</td>
+                            <td> Ne</td>
+                            <td>nb</td>
+                            <td>Total </td>
+                            <td>nom </td>
+                            <td></td>
+                        </thead>
+
+                        <tbody>
+                            <% for (let i=0 ; i < items.length ; i++) {%>
+                                <tr>
+                                    <td>
+                                        <%= i+1%>
+                                    </td>
+                                    <td>
+                                        <%=items[i].nom %>
+                                    </td>
+                                    <td>
+                                        <%=items[i].prix %> DZ
+                                    </td>
+
+                                    <form method="POST">
+                                        <td> <input type="text" name="Nombre_Personne" class="form-control"
+                                                value="<%= items[i].Nombre_Personne%>"></td>
+
+                                        <td> <input type="text" name="Nombre_enfants" class="form-control"
+                                                value="<%= items[i].Nombre_enfants%>"></td>
+                                        <td> <input type="text" name="Nombre_bebe" class="form-control"
+                                                value="<%= items[i].Nombre_bebe%>"></td>
+                                        <td> <input type="text" name="Nombre_bebe" class="form-control"
+                                                value="<%= items[i].Nombre_bebe%>"></td>
+                                        <td>
+                                            <%= (items[i].prix *
+                                                items[i].Nombre_Personne)+((items[i].prix/2))*(items[i].Nombre_enfants)
+                                                %> DZ
+                                        </td>
+                                        <td>
+                                            <input type="hidden" name="reserId" value="<%= items[i]._id %>">
+                                            <input type="submit" class="btn btn-success" value="Save"
+                                                formaction="/reser/save">
+                                            <input type="submit" class="btn btn-danger" value="Delete"
+                                                formaction="/reser/delete">
+                                        </td>
+
+                                    </form>
+                                </tr>
+                                <%}%>
+                        </tbody>
+                    </table>
+                    <%}%>
+
+        </div>

@@ -1,0 +1,30 @@
+<%- include('parts/header')  %> 
+<%- include('parts/navbar') %> 
+  
+<div class="item client"  >
+    <div class="recentCustomers">
+         <div class="cardHeader">
+             <h2>liste de demandes d'agences :</h2>
+         </div>
+         <table> 
+                  <% for(agence of agences){ %> 
+                    <% if(agence.blocRqst==true) {%> 
+            <tr>
+                 <td> 
+                     <h4>l'agence <span><%=  agence.nom %> </span> souhaite bloquer son compte, <span> vous confirmez sa demande ?</span></td>
+                 <td><div class="acceptcust">
+                     <a class="btn btn-danger" href="/ajout/deleteag/<%= agence._id %> ">confirmer la demande</a>
+                </td>   
+             </tr>
+            <% } }%> 
+         </table>
+     </div>
+ </div>
+
+
+</div>
+
+
+</div>
+
+<%- include('parts/footer') %>

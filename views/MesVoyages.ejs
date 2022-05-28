@@ -1,0 +1,52 @@
+<%- include('parts/header')%>
+    <%- include('parts/navbar')%>
+
+
+        <div class="container">
+
+            <% if(items.length===0) {%>
+                <p class="alert alert-danger"> Aucune Reservation</p>
+                <% } else { %>
+
+                    <table>
+                        <thead>
+                            <td>no</td>
+                            <td>demande</td>
+
+                            <td>Total </td>
+                            <td>nom </td>
+                            <td></td>
+                        </thead>
+
+                        <tbody>
+                            <% for (let i=0 ; i < items.length ; i++) {%>
+                                <tr>
+                                    <td>
+                                        <%= i+1%>
+                                    </td>
+                                    <td>
+                                        <%=items[i].username %>
+                                    </td>
+                                    <td>
+                                        <%=items[i].budjet %> DZ
+                                    </td>
+
+
+
+                                    <td>
+                                        <input type="hidden" name="reserId" value="<%= items[i]._id %>">
+
+
+                                        <a href="/demande/<%= items[i]._id%>" class="btn">
+                                            consuler
+                                        </a>
+                                    </td>
+
+                                    </form>
+                                </tr>
+                                <%}%>
+                        </tbody>
+                    </table>
+                    <%}%>
+
+        </div>

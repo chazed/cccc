@@ -1,0 +1,49 @@
+<%- include('parts/header') %>
+  <%- include('parts/navbar') %>
+    <link rel="stylesheet" href="/css/gift.css">
+
+
+    <section>
+
+      <div class="container">
+        <h1 class="heading"> participez à nos tombolas et gagnez un voyage gratuit ! </h1>
+        <div class="card-wrapper">
+          <% for(tombola of tombolas) {%>
+            <div class="cardG">
+              <h1>
+                <%= tombola.nom %>
+              </h1>
+              <img src="<%= tombola.image %> " alt="profile image" class="profile-img">
+              <h1>
+                <%= tombola.category %>
+              </h1>
+              <h1>
+                <%= tombola.destination%>
+              </h1>
+              <h1>le départ est pour le : <%= tombola.date%>
+              </h1>
+              <h1>vous allez passer <%= tombola.nbrnuit%> nuits</h1>
+              <h1>une petite description de l'offre :<%= tombola.description%>
+              </h1>
+              <p class="about">
+                Vous allez gagner une offre de voyage gratuite, participez maintenant avant que l'offre soit plus
+                disponible, vous allez recevoir un message SI VOUS GAGNEREZ
+              </p>
+              <a href="/tombola/participer/<%= tombola._id %> " class="btn">participer</a>
+            </div>
+
+            <% if(tombola.gagnant!=null) {%>
+
+              <p> le gagnant est : <a href="/tombola/getgagnant/<%= tombola._id %> " class="btn">participer</a> </p>
+
+              <% } %>
+
+                <% }%>
+                  <% if(authsuccess) {%>
+                    <p class="error">
+                      <%= authsuccess%>
+                        <% } %>
+        </div>
+
+    </section>
+    <%- include('parts/footer') %>

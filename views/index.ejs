@@ -1,0 +1,187 @@
+<%- include('parts/header')%>
+    <%- include('parts/navbar')%>
+        <%- include('parts/accueil')%>
+
+
+
+
+
+            <section class="container2">
+                <!-- pour s afficher au milieu-->
+                <form action="/" method="GET">
+                    <select name="StyleVoyage" required>
+                        <option value="all">recherchez l'offre par Style de voyage </option>_
+                        <option value="05">En Famille</option>
+                        <option value="Entre Amis">Entre Amis</option>
+                        <option value="Week-End">Week-End</option>
+                        <option value="En Amoreux">En Amoreux</option>
+                        <option value="Tour Du Monde">Tour Du Monde</option>
+                        <option value="Rando Trek">Rando Trek</option>
+                    </select>
+
+
+                    <!-- <input type="submit" class="btn btn-primary" value="filtrer">
+                </form>
+
+
+                 pour s afficher au milieu
+                <form action="/" method="GET" name="destination">
+
+                    <input type="text" class="btn btn-primary" placeholder="destination" name="destination" value="all">
+
+                    <input type="submit" class="btn btn-primary" value="filtrer">
+                </form>-->
+
+
+                    <select name="Wilaya" required>
+                        <option value="all">recherchez l'offre par Wilaya </option>
+                        <option value="Adrar">Adrar</option>
+                        <option value="Chlef">Chlef</option>
+                        <option value="Laghouat">Laghouat</option>
+                        <option value="Oum El Bouaghi">Oum El Bouaghi</option>
+                        <option value="Batna">Batna</option>
+                        <option value="Bejaia">Bejaia</option>
+                        <option value="Biskra">Biskra</option>
+                        <option value="Bechar">Bechar</option>
+                        <option value="Blida">Blida</option>
+                        <option value="Bouira">Bouira</option>
+                        <option value="Tamanrasset">Tamanrasset</option>
+                        <option value="Tebessa">Tebessa</option>
+                        <option value="Tlemcen">Tlemcen</option>
+                        <option value="Tiaret">Tiaret</option>
+                        <option value="Tizi Ouzou">Tizi Ouzou</option>
+                        <option value="Alger">Alger</option>
+                        <option value="Djelfa">Djelfa</option>
+                        <option value="Jijel">Jijel</option>
+                        <option value="Setif">Setif</option>
+                        <option value="Saida">Saida</option>
+                        <option value="Skikda">Skikda</option>
+                        <option value="Sidi Bel Abbes">Sidi Bel Abbes</option>
+                        <option value="Annaba">Annaba</option>
+                        <option value="Guelma">Guelma</option>
+                        <option value="Constantine">Constantine</option>
+                        <option value="Medea">Medea</option>
+                        <option value="Mostaganem">Mostaganem</option>
+                        <option value="MSila">MSila</option>
+                        <option value="Mascara">Mascara</option>
+                        <option value="Ouargla">Ouargla</option>
+                        <option value="Oran">Oran</option>
+                        <option value="El Bayadh">El Bayadh</option>
+                        <option value="Illizi">Illizi</option>
+                        <option value="Bordj Bou Arreridj">Bordj Bou Arreridj</option>
+                        <option value="Boumerdes">Boumerdes</option>
+                        <option value="El Tarf">El Tarf</option>
+                        <option value="Tindouf">Tindouf</option>
+                        <option value="Tissemsilt">Tissemsilt</option>
+                        <option value="El Oued">El Oued</option>
+                        <option value="Khenchela">Khenchela</option>
+                        <option value="Souk Ahras">Souk Ahras</option>
+                        <option value="Tipaza">Tipaza</option>
+                        <option value="Mila">Mila</option>
+                        <option value="Ain Defla">Ain Defla</option>
+                        <option value="Naama">Naama</option>
+                        <option value="Ain Temouchent">Ain Temouchent</option>
+                        <option value="Ghardaia">Ghardaia</option>
+                        <option value="Relizane">Relizane</option>
+                    </select>
+
+                    <select name="Mois" required>
+                        <option value="all">recherchez l'offre par mois </option>
+
+                        <option value="Janvier" class="formm-control">
+                            Janvier
+                        </option>
+                        <option value="Fevrier">
+                            Février
+                        </option>
+                        <option value="Mars">
+                            Mars
+                        </option>
+                        <option value="Avril">
+                            Avril
+                        </option>
+                        <option value="Mai">
+                            Mai
+                        </option>
+                        <option value="Juin">
+                            Juin
+                        </option>
+                        <option value="Juillet">
+                            Juillet
+                        </option>
+                        <option value="Aout">
+                            Aout
+                        </option>
+                        <option value="Septembre">
+                            Septembre
+                        </option>
+                        <option value="Octobre">
+                            Octobre
+                        </option>
+                        <option value="Novembre">
+                            Novembre
+                        </option>
+                        <option value="Decembre">
+                            Decembre
+                        </option>
+                    </select>
+
+
+
+                    <input type="submit" class="btn btn-primary" value="filtrer">
+                </form>
+                <% if(validationError){%>
+                    <p class="alert alert-danger">
+                        <%= validationError.msg%>
+                    </p>
+                    <%}%>
+
+
+                        <div class="row">
+
+                            <% for(let product of products) { %>
+                                <!-- mettre ds loop-->
+                                <div class="col col-12 col-md-6 col-lg-4 col-xl-3">
+                                    <!--combien de pub pour l affichage , col 12 prend-->
+                                    <div class="cardl" style="width: 18rem;">
+                                        <img src="<%= product.photoUrl1 %>" class="card-img-top">
+                                        <div class="card-body">
+
+                                            <h5 class="card-title">
+                                                <a href="/product/<%= product._id%>">
+                                                    <%= product.nomOffre%>
+                                                </a>
+                                                <p>Prix:<%=product.prix%>
+                                                </p>
+                                            </h5>
+                                            <form action="/reser" method="POST" class="add-to-cart-form">
+
+                                                <input type="number" name="Nombre_Personne" value="/"
+                                                    placeholder="nombre de personne" class="format">
+                                                <br><br>
+
+                                                <input type="number" name="Nombre_enfants" value="/"
+                                                    placeholder="nombre d'enfants" class="format">
+
+
+
+                                                <input type="hidden" name="agenceId" value="<%=product.agenceId %>">
+                                                <input type="hidden" name="nom" value="<%=product.nomOffre %>">
+                                                <input type="hidden" name="prix" value="<%=product.prix%>">
+                                                <input type="hidden" name="productId" value="<%=product._id%>">
+                                                <input type="hidden" name="redirectTo" value="/">
+                                                <input type="submit" value="Reserver" class="btn btn-primary">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <%}%>
+                        </div>
+
+            </section>
+            <br> <br> <br> <br> <br> <br> <br> <br>
+
+            <%- include('parts/corps')%>
+
+                <%- include('parts/footer')%>

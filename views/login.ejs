@@ -1,0 +1,70 @@
+<%- include('parts/header')  %> 
+ <%- include('parts/navbar')  %>
+ 
+<div class="container text-center">
+  <div class="cardd">
+    <div class="inner-box" id="cardd">
+        <div class="card-front">
+          <h2>Connexion Client</h2>
+            <form action="/login" method="POST">
+                <p>se connecter avec :</p> 
+                <div class="social-media">
+                    <p><i class="fab fa-google"></i></p>
+                    <p><i class="fab fa-youtube"></i></p>
+                    <p><i class="fab fa-facebook-f"></i></p>
+                    <p><i class="fab fa-twitter"></i></p>
+                    <p><i class="fab fa-instagram"></i></p>
+                  </div>
+                  <p>ou utiliser mon adresse e-mail :</p>
+                <input type="email" class="box" name="email" placeholder="saisir votre email"  required>
+    <input type="password" class="box" name="password" placeholder="saisir le mot de passe" required>
+     <button type="submit" class="submit-btn">Se connecter</button>
+     <br>
+    <input type="checkbox" id="remember">
+    <label for="remember">rappelez-moi</label>
+    <p >mot de passe  oublié ? <a href="/get-email">cliquez ici</a></p>
+    <button type="button" class="submit-btn" onclick="openconnexionAg()">je suis une agence</button>
+     </form>
+     <br>
+     <% if(authError) { %> 
+     <p class="errr">
+       <%=  authError%> 
+      </p>
+     <% } %> 
+     <br>
+            </div>
+            <div class="card-back">
+  <h2>Connexion Agence</h2>
+    <form action="/login1" method="POST">
+        <p>se connecter avec :</p> 
+        <div class="social-media">
+            <p><i class="fab fa-google"></i></p>
+            <p><i class="fab fa-youtube"></i></p>
+            <p><i class="fab fa-facebook-f"></i></p>
+            <p><i class="fab fa-twitter"></i></p>
+            <p><i class="fab fa-instagram"></i></p>
+          </div>
+          <p>ou utiliser mon adresse e-mail :</p>
+           <input type="email" class="box" name="email" placeholder="saisir votre email"  required>
+          <input type="password" class="box" name="password" placeholder="saisir le mot de passe" required>
+          <button type="submit" class="submit-btn">Se connecter</button>
+                 <br>
+          <input type="checkbox" id="remember">
+          <label for="remember">rappelez-moi</label>
+          <p>mot de passe  oublié ? <a href="#">cliquez ici</a></p>
+          <button type="button" class="submit-btn" onclick="openconnexionCl()">je suis un client</button>
+        </form>
+                            <br>
+                  <% if(authError) { %> 
+                  <p class="errr">
+                  <%=  authError%> 
+                      </p>
+                      <% } %> 
+                                <br>
+      </div>
+      </div>
+</div>
+</div>
+
+
+<%- include('parts/footer')  %>

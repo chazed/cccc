@@ -1,0 +1,240 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a href="#" class="logo"><span>S</span>un<span>W</span>ay <span>T</span>ra<span>V</span>el</a>
+  <div class="container">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link  " aria-current="page" href="/">Accueil</a>
+
+            <% if(isAdmin) { %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              nos services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+              <li><a class="dropdown-item" href="#nos offres">nos offres</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="/voyagecarte">voyage à la carte</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/ajout ">demande d'ajout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/tombolaAdmin">Tombola</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/liste-reservations">liste réservations</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/msgAdmin">messagerie</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/messagerie">Admin</a>
+          </li>
+
+          <li class="nav-item">
+            <i class="fas fa-search" id="search-btn"></i>
+          </li>
+          <form action="" class="search-bar-container">
+            <input type="search" id="search-bar" placeholder="search here...">
+            <label for="search-bar" class="fas fa-search"></label>
+          </form>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              parametres
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="/agences">voir la liste des agences</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+              <li><a class="dropdown-item" href="/users">voir la liste de clients</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+              <li><a class="dropdown-item" href="/logout">se déconnecter</a></li>
+            </ul>
+          </li>
+
+
+
+          <% }else { %>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#gallerie">gallerie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Quisommenous">qui sommes nous?</a>
+            </li>
+
+            <% if(isAgence) {%>
+              <li class="nav-item">
+                <a class="nav-link" href="/agence/Offre">panier d'offres</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/MesOffres"> offres</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/liste-voyageurs">réservations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/message">messagerie</a>
+              </li>
+              <li class="nav-item">
+                <i class="fas fa-search" id="search-btn"></i>
+              </li>
+              <form action="" class="search-bar-container">
+                <input type="search" id="search-bar" placeholder="search here...">
+                <label for="search-bar" class="fas fa-search"></label>
+              </form>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  parametres
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="/update">modifier coordonnées du compte</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+
+                  <li><a class="dropdown-item" href="/bloquer">bloquer son compte</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+
+                  <li><a class="dropdown-item" href="/logout">se déconnecter</a></li>
+                </ul>
+              </li>
+              <!--<form action="/logout" method="POST">
+            <input type="submit" value=" se déconnecter"class="btn-logout">  
+          </form>-->
+
+              <% }else { if(isUser){%>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    nos services
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+
+                    <li><a class="dropdown-item" href="#nos offres">nos offres</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="/creervoyage">voyage à la carte</a></li>
+
+                    <li><a class="dropdown-item" href="/MesVoyages">Mes-V-carte</a></li>
+                  </ul>
+                </li>
+
+        </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/reser">mes réservations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tombola">tombola</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/messagerie">messagerie</a>
+        </li>
+        <li class="nav-item">
+          <i class="fas fa-search" id="search-btn"></i>
+        </li>
+
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            parametres
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="/blocAccount">bloquer son compte</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li><a class="dropdown-item" href="/logout">se déconnecter</a></li>
+          </ul>
+        </li>
+        <div class="container">
+          <div class="col-md-3">
+            <img src="/images/profile.png" alt="">
+          </div>
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+
+    <form action="" class="search-bar-container">
+      <input type="search" id="search-bar" placeholder="search here...">
+      <label for="search-bar" class="fas fa-search"></label>
+    </form>
+    <% } else { %>
+
+      <li class="nav-item">
+        <i class="fas fa-user" id="login-btn"><a href="/login">se connecter</a></i>
+      </li>
+
+      <li class="nav-item" id="register-btn">
+        <i class="fas fa-user-plus" id="register-btn"><a href="/register">s'inscrire</a></i>
+      </li>
+      <li class="nav-item">
+        <i class="fas fa-search" id="search-btn"></i>
+      </li>
+      <form action="" class="search-bar-container">
+        <input type="search" id="search-bar" placeholder="search here...">
+        <label for="search-bar" class="fas fa-search"></label>
+      </form>
+
+      </form>
+      <% }}}%>
+
+</nav>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/sockets/init.js"></script>

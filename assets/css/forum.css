@@ -1,0 +1,247 @@
+  
+.booking-form-boxx{
+    max-width:1200px;
+    max-height: 100%;
+    border:2px solid rgb(235, 231, 231);
+    margin:0 auto 0;
+    display:flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 60px;
+    padding-top: -5px;
+    left: 10%;
+}
+
+.formm-row{
+    display:flex;
+    width:600px;
+    margin: 0 auto;  
+}
+ .carddd  form select, .carddd  form input{
+    display:inline-block;
+    width: 200%;
+   margin: 20px 70px;
+    padding: 6px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border-bottom: 1px solid rgb(36, 32, 32);
+    font-weight: 400;
+    font-size:20px!important;
+    border: radius 15!important;
+    background:rgb(206, 190, 190)!important;
+    color:rgb(88, 86, 86) !important;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.carddd form input[type = text], .carddd form input[type = number], .carddd form input::placeholder, select{
+    color: #111010;
+    width: 900px;
+}
+
+ .input-grpp label{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background:#06133b;
+    color:rgb(204, 160, 200);
+    font-size: 15px;
+    padding: .2rem 1rem;
+    margin-bottom: 0px;
+}
+.check-inn{
+    font-size: 20px;
+    font-style:oblique;
+    font-weight: bolder;
+    padding-bottom: -20px;
+    padding: .2rem 1rem;
+}
+
+
+.formm-row option{
+    font-size:  20px;
+    color: #c2180c;
+    background: #02062b;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.booking-formm{
+    padding:0 0px 40px;
+    width: 700px;
+    padding-bottom: 15px;
+     font-size: 25px;
+}
+ 
+.booking-formm input{
+    width: 700px;
+     
+}
+
+ .booking-formm label{
+    margin-bottom:10px;
+    margin-top:4px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background:#06133b;
+    color:rgb(204, 160, 200);
+    font-size: 17px;
+    padding: .2rem 1rem;
+    width: 250px;
+}
+.booking-formmm{
+    padding:0 0px 40px;
+    width: 500px;
+    padding-bottom: 15px;
+     font-size: 25px;
+}
+ 
+.booking-formmm input{
+    width: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+    padding-top: 15px;
+    background-color: #02062b;
+}
+
+ .booking-formmm label{
+    margin-bottom:10px;
+    margin-top:4px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background:#06133b;
+    color:rgb(204, 160, 200);
+    font-size: 17px;
+    padding: .2rem 1rem;
+    width: 250px;
+}
+.check-in-voyager{
+    font-size: 20px;
+    font-style:oblique;
+    font-weight:bolder;
+    padding-bottom: 5px;
+    margin-top: -4px;
+}
+.check-in-voyager label {
+    background-color: transparent;
+}
+.check-inn label{
+    background-color: transparent;
+}
+.carddd input::placeholder
+{
+    color:#000 rgb(88, 86, 86)!important;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 400px;
+    
+}
+
+  .proposer{
+    font-size: large;
+
+}
+ .form-control
+{
+    font-size:30px!important;
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: radius 20!important;
+    box-shadow:none!important;
+    background:rgb(206, 190, 190)!important;
+    color:rgb(39, 36, 36) !important;
+}
+.formm
+{
+    font-size:30px!important;
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: radius 0!important;
+    box-shadow:none!important;
+    background:rgb(206, 190, 190)!important;
+    color:rgb(39, 36, 36) !important;
+
+     
+}
+.booking-form-boxx.heading{
+    text-align: center;
+    padding: 500px;
+  }
+  .formm-row-book{
+    display:flex;
+    width: 400px;
+    margin: 0 auto;  
+}
+ 
+ .carddd textarea{
+      width: 700px;
+      height: 120px;
+      padding:20px 20px 50px 20px;
+      background:rgb(206, 190, 190)!important;;
+  }
+ 
+.input-grpp
+{
+    width: 260px;
+    display:inline-block;
+    color: #eb1b1b important!;
+}
+.input-grpp .costume-select{
+    color: rgb(80, 5, 5) ;
+    font-size: 30px;
+    border:1px solid #151616;
+    box-shadow:none;
+    border: radius 15px;;
+    background-color: #02062b important!;
+}
+
+
+  .heading span{
+    font-size: 3rem;
+    background:rgba(69, 17, 167, 0.2);
+    color:#671597;
+    border-radius: .5rem;
+    padding:0.5rem 0.5rem;
+  }
+   
+
+ .heading span.space{
+    background:none;
+  }
+
+  .radios-btn{
+    background-color: rgb(228, 220, 220);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 84px;
+    font-size: 3rem;
+     
+}
+  
+  
+  .radios-btn span{
+    color: #000;
+    margin-right:15px;
+    font-size:15px;
+}
+
+ 
+ 
+
+ 
+ 
+ .select-date::-webkit-inner-spin-button,
+ .select-date::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 155px;
+   
+}
+  .select-date::-webkit-calender-picker-indocator{
+    background: transparent !important;
+   
+}
+ 
+.formm-row option{
+    font-size:  15px;
+    color: #c2180c;
+    background: #02062b;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.eror  {
+    background-color: #671597;
+    height: 40px;
+    font-size: 40px;
+}
+ 
+ 

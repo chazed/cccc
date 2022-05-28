@@ -1,0 +1,40 @@
+<%- include('parts/header')  %> 
+<%- include('parts/navbar') %> 
+  
+<div class="item client"  >
+    <div class="recentCustomers">
+         <div class="cardHeader">
+             <h2>liste de clients voyageurs :</h2>
+         </div>
+         <table>
+            <% for(user of users) {
+                if (user.isAdmin==false){%>
+                  
+            <tr>
+                  
+                 <td width="60px">
+                     <div class="imgBx"><img src="/ighzar.jpg" alt=""></div>
+                 </td>
+                 <td> 
+                     <h4><%= user.nom %>  <%= user.prenom %>   <br><br>
+                 </td>
+                 <td><div class="acceptcust">
+                  
+                 <td> 
+                     <a class="btn btn-danger" href="/users/deleteuser/<%= user._id %> ">supprimer</a>
+                </td> 
+                   
+             </tr>
+             <% }} %> 
+            
+         </table>
+     </div>
+ </div>
+
+
+</div>
+
+
+</div>
+
+<%- include('parts/footer') %>

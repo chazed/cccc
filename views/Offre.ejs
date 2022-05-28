@@ -1,0 +1,404 @@
+<%- include('parts/header1')%>
+    <%- include('parts/navbar')%>
+
+        <div class="container text-center">
+            <div class="booking-formm">
+                <br> <br>
+                <label>Ajouter Offre</label>
+            </div>
+            <form action="/MesOffres" method="POST" encytype="multipart/form-data">
+                <input type="text" class=" form-control" name="nomOffre" placeholder="nom de l'offre ">
+                <% let nomOffreError=validationErrors.find(err=> err.param ==='nomOffre') %>
+                    <% if (nomOffreError) {%>
+                        <p class="alert alert-danger">
+                            <%= nomOffreError.msg%>
+                        </p>
+                        <%}%>
+                            <br>
+                            <select name="Wilaya" required class="form-control">
+                                <option value=" /">choisissez la wilaya </option>
+                                <option value="Adrar">Adrar</option>
+                                <option value="Chlef">Chlef</option>
+                                <option value="Laghouat">Laghouat</option>
+                                <option value="Oum El Bouaghi">Oum El Bouaghi</option>
+                                <option value="Batna">Batna</option>
+                                <option value="Bejaia">Bejaia</option>
+                                <option value="Biskra">Biskra</option>
+                                <option value="Bechar">Bechar</option>
+                                <option value="Blida">Blida</option>
+                                <option value="Bouira">Bouira</option>
+                                <option value="Tamanrasset">Tamanrasset</option>
+                                <option value="Tebessa">Tebessa</option>
+                                <option value="Tlemcen">Tlemcen</option>
+                                <option value="Tiaret">Tiaret</option>
+                                <option value="Tizi Ouzou">Tizi Ouzou</option>
+                                <option value="Alger">Alger</option>
+                                <option value="Djelfa">Djelfa</option>
+                                <option value="Jijel">Jijel</option>
+                                <option value="Setif">Setif</option>
+                                <option value="Saida">Saida</option>
+                                <option value="Skikda">Skikda</option>
+                                <option value="Sidi Bel Abbes">Sidi Bel Abbes</option>
+                                <option value="Annaba">Annaba</option>
+                                <option value="Guelma">Guelma</option>
+                                <option value="Constantine">Constantine</option>
+                                <option value="Medea">Medea</option>
+                                <option value="Mostaganem">Mostaganem</option>
+                                <option value="MSila">MSila</option>
+                                <option value="Mascara">Mascara</option>
+                                <option value="Ouargla">Ouargla</option>
+                                <option value="Oran">Oran</option>
+                                <option value="El Bayadh">El Bayadh</option>
+                                <option value="Illizi">Illizi</option>
+                                <option value="Bordj Bou Arreridj">Bordj Bou Arreridj</option>
+                                <option value="Boumerdes">Boumerdes</option>
+                                <option value="El Tarf">El Tarf</option>
+                                <option value="Tindouf">Tindouf</option>
+                                <option value="Tissemsilt">Tissemsilt</option>
+                                <option value="El Oued">El Oued</option>
+                                <option value="Khenchela">Khenchela</option>
+                                <option value="Souk Ahras">Souk Ahras</option>
+                                <option value="Tipaza">Tipaza</option>
+                                <option value="Mila">Mila</option>
+                                <option value="Ain Defla">Ain Defla</option>
+                                <option value="Naama">Naama</option>
+                                <option value="Ain Temouchent">Ain Temouchent</option>
+                                <option value="Ghardaia">Ghardaia</option>
+                                <option value="Relizane">Relizane</option>
+                            </select>
+                            <br>
+                            <% let WilayaError=validationErrors.find(err=> err.param ==='Wilaya') %>
+                                <% if (WilayaError) {%>
+                                    <p class="alert alert-danger">
+                                        <%= WilayaError.msg%>
+                                    </p>
+                                    <%}%>
+                                        <input type="text" class=" form-control" name="destination"
+                                            placeholder="destination dans la wilaya">
+                                        <% let destinationError=validationErrors.find(err=> err.param ==='destination')
+                                            %>
+                                            <% if (destinationError) {%>
+                                                <p class="alert alert-danger">
+                                                    <%= destinationError.msg%>
+                                                </p>
+                                                <%}%>
+
+                                                    <br>
+
+                                                    <input type="text" class=" form-control" name="voyagerDe"
+                                                        placeholder="voyager de">
+                                                    <% let voyagerDeError=validationErrors.find(err=> err.param
+                                                        ==='voyagerDe') %>
+                                                        <% if (voyagerDeError) {%>
+                                                            <p class="alert alert-danger">
+                                                                <%= voyagerDeError.msg%>
+                                                            </p>
+                                                            <%}%>
+                                                                <br>
+                                                                <br>
+                                                                <br>
+                                                                <br>
+
+                                                                <div class="booking-formm">
+                                                                    <label>Date depart</label>
+                                                                    <select name="Mois" required class="formm-control">
+
+                                                                        <option value="Janvier" class="formm-control">
+                                                                            Janvier
+                                                                        </option>
+                                                                        <option value="Fevrier">
+                                                                            Février
+                                                                        </option>
+                                                                        <option value="Mars">
+                                                                            Mars
+                                                                        </option>
+                                                                        <option value="Avril">
+                                                                            Avril
+                                                                        </option>
+                                                                        <option value="Mai">
+                                                                            Mai
+                                                                        </option>
+                                                                        <option value="Juin">
+                                                                            Juin
+                                                                        </option>
+                                                                        <option value="Juillet">
+                                                                            Juillet
+                                                                        </option>
+                                                                        <option value="Aout">
+                                                                            Aout
+                                                                        </option>
+                                                                        <option value="Septembre">
+                                                                            Septembre
+                                                                        </option>
+                                                                        <option value="Octobre">
+                                                                            Octobre
+                                                                        </option>
+                                                                        <option value="Novembre">
+                                                                            Novembre
+                                                                        </option>
+                                                                        <option value="Decembre">
+                                                                            Decembre
+                                                                        </option>
+                                                                    </select>
+
+
+                                                                    <% let MoisError=validationErrors.find(err=>
+                                                                        err.param
+                                                                        ==='Mois') %>
+                                                                        <% if (MoisError) {%>
+                                                                            <p class="alert alert-danger">
+                                                                                <%= MoisError.msg%>
+                                                                            </p>
+                                                                            <%}%>
+
+                                                                                <input type="date" name="depart"
+                                                                                    class=" form-control"
+                                                                                    placeholder="date de départ">
+                                                                </div>
+                                                                <% let departError=validationErrors.find(err=>
+                                                                    err.param
+                                                                    ==='depart') %>
+                                                                    <% if (departError) {%>
+                                                                        <p class="alert alert-danger">
+                                                                            <%= departError.msg%>
+                                                                        </p>
+                                                                        <%}%>
+                                                                            <br>
+
+
+
+
+                                                                            <input type="number" class=" form-control"
+                                                                                name="nombreNuit"
+                                                                                placeholder="nombre de nuit">
+                                                                            <% let
+                                                                                nombreNuitError=validationErrors.find(err=>
+                                                                                err.param
+                                                                                ==='nombreNuit') %>
+                                                                                <% if (nombreNuitError) {%>
+                                                                                    <p class="alert alert-danger">
+                                                                                        <%= nombreNuitError.msg%>
+                                                                                    </p>
+                                                                                    <%}%>
+
+                                                                                        <br>
+
+                                                                                        <input type="number"
+                                                                                            class=" form-control"
+                                                                                            name="nombrePersonne"
+                                                                                            placeholder="nombre-Personne">
+
+                                                                                        <% let
+                                                                                            nombrePersonneError=validationErrors.find(err=>
+                                                                                            err.param
+                                                                                            ==='nombrePersonne')
+                                                                                            %>
+                                                                                            <% if (nombrePersonneError)
+                                                                                                {%>
+                                                                                                <p
+                                                                                                    class="alert alert-danger">
+                                                                                                    <%=
+                                                                                                        nombrePersonneError.msg%>
+                                                                                                </p>
+                                                                                                <%}%>
+                                                                                                    <br>
+
+
+                                                                                                    <br>
+
+                                                                                                    <input type="number"
+                                                                                                        class="form-control"
+                                                                                                        name="prix"
+                                                                                                        placeholder="prix">
+                                                                                                    <% let
+                                                                                                        prixError=validationErrors.find(err=>
+                                                                                                        err.param
+                                                                                                        ==='prix')
+                                                                                                        %>
+                                                                                                        <% if
+                                                                                                            (prixError)
+                                                                                                            {%>
+                                                                                                            <p
+                                                                                                                class="alert alert-danger">
+                                                                                                                <%=
+                                                                                                                    prixError.msg%>
+                                                                                                            </p>
+                                                                                                            <%}%>
+
+                                                                                                                <br><br><br>
+                                                                                                                <div
+                                                                                                                    class="booking-formm">
+                                                                                                                    <label>Style
+                                                                                                                        de
+                                                                                                                        Voyage</label>
+                                                                                                                    <select
+                                                                                                                        name="StyleVoyage"
+                                                                                                                        required
+                                                                                                                        class="form-control">
+                                                                                                                        <option
+                                                                                                                            value="/">
+
+                                                                                                                        </option>
+                                                                                                                        <option
+                                                                                                                            value="En Famille">
+                                                                                                                            En
+                                                                                                                            Famille
+                                                                                                                        </option>
+                                                                                                                        <option
+                                                                                                                            value="Entre Amis">
+                                                                                                                            Entre
+                                                                                                                            Amis
+                                                                                                                        </option>
+                                                                                                                        <option
+                                                                                                                            value="Week-End">
+                                                                                                                            Week-End
+                                                                                                                        </option>
+                                                                                                                        <option
+                                                                                                                            value="En Amoreux">
+                                                                                                                            En
+                                                                                                                            Amoreux
+                                                                                                                        </option>
+                                                                                                                        <option
+                                                                                                                            value="Tour Du Monde">
+                                                                                                                            Tour
+                                                                                                                            Du
+                                                                                                                            Monde
+                                                                                                                        </option>
+                                                                                                                        <option
+                                                                                                                            value="Rando Trek">
+                                                                                                                            Rando
+                                                                                                                            Trek
+                                                                                                                        </option>
+                                                                                                                    </select>
+
+
+                                                                                                                    <% let
+                                                                                                                        StyleVoyageError=validationErrors.find(err=>
+                                                                                                                        err.param
+                                                                                                                        ==='StyleVoyage')
+                                                                                                                        %>
+                                                                                                                        <% if
+                                                                                                                            (StyleVoyageError)
+                                                                                                                            {%>
+                                                                                                                            <p
+                                                                                                                                class="alert alert-danger">
+                                                                                                                                <%=
+                                                                                                                                    StyleVoyage.msg%>
+                                                                                                                            </p>
+                                                                                                                            <%}%>
+
+
+
+                                                                                                                                <br>
+
+                                                                                                                                <label>Type
+                                                                                                                                    d'hebergement</label>
+                                                                                                                                <select
+                                                                                                                                    name="TypeHebergement"
+                                                                                                                                    class="form-control"
+                                                                                                                                    required>
+
+                                                                                                                                    <option
+                                                                                                                                        value=" Hotel">
+                                                                                                                                        Hotel
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Auberge">
+                                                                                                                                        Auberge
+
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value=" Camping">
+                                                                                                                                        Camping
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Maison">
+                                                                                                                                        Maison
+                                                                                                                                    </option>
+                                                                                                                                </select>
+                                                                                                                                <br>
+                                                                                                                                <label>Moyen
+                                                                                                                                    Transport"</label>
+                                                                                                                                <select
+                                                                                                                                    name="MoyenTransport"
+                                                                                                                                    class="form-control"
+                                                                                                                                    required>
+
+                                                                                                                                    <option
+                                                                                                                                        value=" Avion">
+                                                                                                                                        Avion
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Bateau">
+                                                                                                                                        Bateau
+
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value=" Bus">
+                                                                                                                                        Bus
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Maison">
+                                                                                                                                        Maison
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Train">
+                                                                                                                                        Train
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Voiture">
+                                                                                                                                        Voiture
+                                                                                                                                    </option>
+                                                                                                                                </select>
+                                                                                                                </div>
+
+                                                                                                                <br><br>
+                                                                                                                <div
+                                                                                                                    class="booking-formm">
+                                                                                                                    <label>Description</label>
+                                                                                                                    <br>
+                                                                                                                    <textarea
+                                                                                                                        name="description"> </textarea>
+                                                                                                                </div>
+                                                                                                                <% let
+                                                                                                                    descriptionError=validationErrors.find(err=>
+                                                                                                                    err.param
+                                                                                                                    ==='description')
+                                                                                                                    %>
+                                                                                                                    <% if
+                                                                                                                        (descriptionError)
+                                                                                                                        {%>
+                                                                                                                        <p
+                                                                                                                            class="alert alert-danger">
+                                                                                                                            <%=
+                                                                                                                                descriptionError.msg%>
+                                                                                                                        </p>
+                                                                                                                        <%}%>
+
+                                                                                                                            <!--  <input
+                                                                                                                                        type="file"
+                                                                                                                                        class="form-control"
+                                                                                                                                        name="image"
+                                                                                                                                        placeholder="Image" />-->
+
+                                                                                                                            <input
+                                                                                                                                type="submit"
+                                                                                                                                value="Suivant"
+                                                                                                                                class="btn btn-primary" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </form>
+
+        </div>
+        <%- include('parts/footer')%>

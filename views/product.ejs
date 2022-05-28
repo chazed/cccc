@@ -1,0 +1,41 @@
+<%- include('parts/header')%>
+    <%- include('parts/navbar')%>
+
+        <div class="container">
+            <% if(!product) { %>
+                <div class="alert-danger">
+                    aucune offre correspondante a ce Id
+                    <!--les msg d erreurs -->
+                </div>
+                <%}else {%>
+                    <div class="row">
+                        <div class="col col-12 col-md-6">
+                            <!--col car  on a deux col cote a coté -->
+                            <img src="<%= product.photoUrl2 %>" class="card-img-top">
+                            <img src="<%= product.photoUrl1 %>" class="card-img-top">
+                            <!-- chaque div a ses propres trucs-->
+                            <!-- chaque div a ses propres trucs-->
+                            <form action="/reser" method="POST">
+                                <input type="number" name="amount" class="form-control">
+                                <input type="submit" value="Réserver" class="btn btn-primary">
+
+                            </form>
+                        </div>
+
+                        <div class="col col-12 col-md-6">
+                            <h3>
+                                <%=product.nomOffre%>
+                            </h3>
+                            <h5>Prix:<%=product.prix%> DZ</h5>
+                            <p>
+                                <%=product.description%>
+                            </p>
+
+                        </div>
+
+
+                    </div>
+                    <%}%>
+
+        </div>
+        <!-- <%- include('parts/footer')%>-->

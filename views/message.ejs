@@ -1,0 +1,48 @@
+<%- include('parts/header') %>
+    <%- include('parts/navbar') %>
+
+        <div class="item client">
+            <div class="recentCustomers">
+                <div class="cardHeader">
+                    <h2>liste de reservations :</h2>
+                </div>
+                <table>
+                    <% for(demande of demandes) {%>
+
+                        <tr>
+
+
+                            <td id="supp">
+                                <h4>
+                                    <%= demande.StyleVoyage %> <br><br> <span>
+                                            <%= demande.lieu %>
+                                        </span><br><br>
+                                </h4>
+                            </td>
+                            <td>
+                                <input type="hidden" name="demandeId" value="<%= demande._id %>">
+
+
+                                <a href="/demande/<%= demande._id%>" class="btn">
+                                    consuler
+                                </a>
+                                <input type="submit" onclick="document.getElementById('supp').style.visibility='hidden'"
+                                    class="btn btn-danger" value="Supprimer">
+                            </td>
+
+
+                        </tr>
+                        <% } %>
+
+                            en attente de demandes d'ajouts...
+                </table>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <%- include('parts/footer') %>

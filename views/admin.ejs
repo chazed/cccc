@@ -1,0 +1,24 @@
+ 
+   <%- include('parts/header') %>
+   <%- include('parts/navbar') %>
+
+
+   <div class="container text-center">
+      <div class="cardd">
+        <div class="inner-box" id="cardd">
+          <div class="card-front">
+              <h2>Connexion Client</h2>
+                <form action="/admin" method="POST">
+                  <input type="email" class="box" name="email" placeholder="saisir votre email"  required>
+                  <input type="password" class="box" name="password" placeholder="saisir le mot de passe" required>
+                  <input type="checkbox" id="remember">
+                  <label for="remember">rappelez-moi</label>
+                  <button type="submit" class="submit-btn">Se connecter</button>
+                  <p>mot de passe  oublié ? <a href="#">cliquez ici</a></p>
+</form>
+</div>
+</div>
+</div>
+</div>
+   <%- include('parts/footer') %>
+

@@ -1,0 +1,38 @@
+<%- include('parts/header') %>
+    <%- include('parts/navbar') %>
+
+        <div class="item client">
+            <div class="recentCustomers">
+                <div class="cardHeader">
+                    <h2>liste de reservations :</h2>
+                </div>
+                <table>
+                    <% for(reservation of reservations) {%>
+
+                        <tr>
+
+
+                            <td>
+                                <h4>
+                                    <%= reservation.nom %> <br><br> <span>
+                                            <%= reservation.prix %>
+                                        </span><br><br>
+                                </h4>
+                            </td>
+
+
+                        </tr>
+                        <% } %>
+
+                            en attente de demandes d'ajouts...
+                </table>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <%- include('parts/footer') %>

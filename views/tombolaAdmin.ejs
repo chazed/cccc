@@ -1,0 +1,88 @@
+<%- include('parts/header') %>
+    <%- include('parts/navbar') %>
+
+        <div class="item client">
+            <div class="recentCustomers">
+
+                <br><br>
+
+                <div class="ajout">
+                    <p><strong>AJOUTER UNE TOMBOLA ?</strong>
+                        <input type="radio" class="btn btn-danger" name="ajout" id="radio" value="ajouter-Tombola"
+                            onchange="essai(this.value)" /><span> OUI </span>
+                        <input type="radio" class="btn btn-danger" name="ajout" id="radio" value="non"
+                            onchange="essai(this.value)" /><span> fermer </span>
+                </div>
+                </p>
+
+
+                <form action="/" method="GET" id="ajouter" style="display: none;">
+                    <% for(product of products) {%>
+                        <br>
+                        <%= product.nom %> <br>
+                            <a class="btn btn-danger" href="/tombolaAdmin/ajoutombo/<%= product._id%> ">ajouter</a>
+                            <% }%>
+                                <br><br>
+
+                </form>
+                <br><br>
+                <div class="cardHeader">
+                    <h2>les tombolas : </h2>
+                </div>
+                <% for(tombola of tombolas){ %>
+
+                    <table>
+                        <tr>
+                            <td>
+                                <h4><span>nom de l'offre : <%=tombola.nom %>, <br><br> categorie : <%= tombola.category
+                                                %> <br><br> destination : <%= tombola.destination%> <br><br>date de
+                                                    départ: <%= tombola.date%> <br><br><br> nombre de nuits à passer :
+                                                        <%= tombola.nbrnuit%> nuits <br><br> une petite description de
+                                                            l'offre: <%= tombola.description%><img
+                                                                    src="<%= tombola.image %> "> </span>
+                            </td>
+                            <td>
+                                <div class="acceptcust">
+                                    <a class="btn btn-danger" href="/tombolaAdmin/choisirGa/<%= tombola._id%> ">choisir
+                                        gagnant</a>
+                                </div>
+                                <% if(authsuccess) { %>
+                                    <p class="error">
+                                        le gagnant de la tombola est :
+                                        <br>
+                                        <%= authsuccess%>
+                                            <div class="deletcust">
+                                                <a class="btn btn-danger"
+                                                    href="/tombolaAdmin/deletetombo/<%= tombola._id%> ">supprimer la
+                                                    tombola</a>
+                                            </div>
+
+                                    </p>
+                                    <% } %>
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                    <% }%>
+
+            </div>
+
+        </div>
+
+
+        </div>
+
+        <%- include('parts/footer') %>
+            <script>
+                function essai(radio) {
+                    if (radio == "ajouter-Tombola") {
+                        document.getElementById('ajouter').style.display = 'block';
+                    }
+                    else {
+                        document.getElementById('ajouter').style.display = 'none';
+
+                    }
+                }
+            </script>

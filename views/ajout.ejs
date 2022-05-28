@@ -1,0 +1,42 @@
+<%- include('parts/header')  %> 
+<%- include('parts/navbar') %> 
+  
+<div class="item client"  >
+    <div class="recentCustomers">
+         <div class="cardHeader">
+             <h2>liste de demandes d'agences :</h2>
+         </div>
+         <table>
+            <% for(agence of agences) {
+                if(agence.activ == false){%>  
+            <tr>
+                  
+                 <td width="60px">
+                     <div class="imgBx"><img src="/ighzar.jpg" alt=""></div>
+                 </td>
+                 <td> 
+                     <h4><%= agence.nom %> <br><br>  <span><%= agence.téléphone %> </span><br><br> Adresse:  <span> <%= agence.adresse %> </span> <br><br>
+                        code postal:  <span>  <%= agence.CodePostal %></span><br><br>  registre de commerce:  <span> <%= agence.registerNumber %></span></h4>
+                 </td>
+                 <td><div class="acceptcust">
+                    <a class="btn btn-danger"  href="/ajout/activeag/<%= agence._id %>" >activer</a>
+                  </div> </td>
+                 <td> 
+                     <a class="btn btn-danger" href="/ajout/deleteag/<%= agence._id %> ">supprimer</a>
+                </td> 
+                   
+             </tr>
+             <% } %> 
+             <% } %> 
+             en attente de demandes d'ajouts...
+         </table>
+     </div>
+ </div>
+
+
+</div>
+
+
+</div>
+
+<%- include('parts/footer') %>

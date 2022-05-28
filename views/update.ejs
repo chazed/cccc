@@ -1,0 +1,31 @@
+<%- include('parts/header') %> 
+<%- include('parts/navbar') %>
+<br><br>
+<div class="card">
+    <div class="inner-box" id="card">
+<div class="card-front">
+    <h2>modifier vos coordonnées :</h2>
+    <form action="/update" method="POST">
+         
+    <input type="email" class="box" name="email" value="<%= updateAgence.email %> " required>
+    <input type="password" class="box" name="password" value="<%= updateAgence.password %> " required>
+    <input type="name" class="box" name="nom" value="<%= updateAgence.nom %> " required>
+    <input type="tel" class="box" name="téléphone" value="<%= updateAgence.téléphone %> "required> 
+    <input type="adresse" class="box" name="adresse" value="<%= updateAgence.adresse %> "required> 
+    <input type="number" name="CodePostal" class="box" value="<%= updateAgence.CodePostal %>">
+    <input type="number" name="registerNumber" class="box" value="<%= updateAgence.registerNumber %>">
+    <button type="submit" class="submit-btn">enregistrer</button>
+    
+   
+    </form>
+    <% if(authsuccess) { %> 
+        <p class="errr">
+          <%=  authsuccess%> 
+         </p>
+        <% } %> 
+    </div> 
+   
+</div>
+
+</div>
+<%- include('parts/footer') %>

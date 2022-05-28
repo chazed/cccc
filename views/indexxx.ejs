@@ -1,0 +1,88 @@
+<%- include('parts/header')%>
+    <%- include('parts/navbar')%>
+        <%- include('parts/accueil')%>
+
+
+
+
+
+            <!--  <section class="container2">
+                 pour s afficher au milieu
+                <form action="/" method="GET">
+                    <select name="StyleVoyage" required>
+                        <option value="selectionnez le type">selectionnez le type</option>
+                        <option value="En Famille">En Famille</option>
+                        <option value="Entre Amis">Entre Amis</option>
+                        <option value="Week-End">Week-End</option>
+                        <option value="En Amoreux">En Amoreux</option>
+                        <option value="Tour Du Monde">Tour Du Monde</option>
+                        <option value="Rando Trek">Rando Trek</option>
+                    </select>
+
+                    </select>
+                    <input type="submit" class="btnn" value="filtrer">
+                </form>
+                
+
+<% if(validationError){%>
+                    <p class="alert alert-danger">
+                        <%= validationError.msg%>
+                    </p>
+                    <%}%>
+
+                        <% if(products.length===0){%>
+                            <div class="alert-danger">
+                                aucune offre de ce style
+                                les msg d erreurs 
+                            </div>
+                            <%}else{%>-->
+            <section class="container2">
+                <div class="row">
+
+                    <% for(let product of products) { %>
+                        <!-- mettre ds loop-->
+                        <div class="col col-12 col-md-6 col-lg-4 col-xl-3">
+                            <!--combien de pub pour l affichage , col 12 prend-->
+                            <div class="cardl" style="width: 18rem;">
+                                <img src="<%= product.image%>" class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a href="/product/<%= product._id%>">
+                                            <%= product.nom%>
+                                        </a>
+                                        <p>Prix:<%=product.prix%>
+                                        </p>
+                                    </h5>
+                                    <form action="/reser" method="POST" class="add-to-cart-form">
+
+                                        <input type="number" name="Nombre_Personne" value="/"
+                                            placeholder="nombre de personne" class="format">
+                                        <br><br>
+
+                                        <input type="number" name="Nombre_enfants" value="/"
+                                            placeholder="nombre d'enfants" class="format">
+
+
+
+
+                                        <input type="hidden" name="nom" value="<%=product.nom %>">
+                                        <input type="hidden" name="prix" value="<%=product.prix%>">
+                                        <input type="hidden" name="productId" value="<%=product._id%>">
+                                        <input type="hidden" name="redirectTo" value="/">
+                                        <input type="submit" value="Reserver" class="btn btn-primary">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--<%}%>
+                
+
+                <%}%>-->
+                </div>
+            </section>
+
+
+
+            <%- include('parts/footer')%>
+                <!--<%- include('parts/corps')%>

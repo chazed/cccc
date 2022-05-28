@@ -1,0 +1,170 @@
+<%- include('parts/header') %>
+  <%- include('parts/navbar') %>
+
+    <div class="container text-center">
+      <div class="carddd">
+        <div class="inner-box" id="carddd">
+          <div class="card-front">
+            <h2>criez votre voyage</h2>
+            <form action="/MesVoyages" method="POST">
+              <div class="booking-form-boxx">
+                <div class="input-grpp">
+
+                  <label>StyleVoyage </label>
+                  <form action="/voyagecarte" method="POST">
+
+                    <div class="formm-row">
+                      <select name="StyleVoyage" required>
+                        <option value="selectionnez le type">selectionnez le type</option>
+                        <option value="En Famille">En Famille</option>
+                        <option value="Entre Amis">Entre Amis</option>
+                        <option value="Week-End">Week-End</option>
+                        <option value="En Amoreux">En Amoreux</option>
+                        <option value="Tour Du Monde">Tour Du Monde</option>
+                        <option value="Rando Trek">Rando Trek</option>
+
+
+                      </select>
+                    </div>
+                    <div class="check-inn">
+                      <input type="checkbox" id="proposez-moi" name="proposer1">
+
+                      <label>proposez-moi</label>
+                    </div>
+                    <div class="booking-formm">
+                      <label>voyager de </label>
+                      <input type="text" class="form-control" placeholder="Cité où Airport" name="lieu">
+                    </div>
+
+
+                    <div class="check-in-voyager">
+                      <input type="checkbox" id="proposez-moi">
+                      <label for="proposez-moi">proposez-moi</label>
+                    </div>
+                    <div class="booking-formm">
+                      <label>Destination </label>
+                      <input type="text" class="form-control" placeholder="Cité où Airport" name="destination">
+                    </div>
+
+                    <div class="check-in-voyager">
+                      <input type="checkbox" id="proposez-moi">
+                      <label for="proposez-moi">proposez-moi</label>
+                    </div>
+
+                    <br>
+                    <div class="booking-formm">
+                      <label>Depart</label>
+                      <input type="date" class="form-control select-date" name="depart">
+                    </div>
+
+                    <div class="check-in-voyager">
+                      <input type="checkbox" id="proposez-moi">
+                      <label for="proposez-moi">proposez-moi</label>
+                    </div>
+                    <br>
+
+                    <div class="booking-formm">
+                      <label>Retour </label>
+                      <input type="date" class="form-control select-date" name="retour">
+                    </div>
+
+                    <div class="check-in-voyager">
+                      <input type="checkbox" id="proposez-moi">
+                      <label for="proposez-moi">proposez-moi</label>
+                    </div>
+
+
+                    <br>
+                    <div class="booking-formm">
+                      <label>Adultes </label>
+                      <input type="number" class="form-control" value="1" name="adulte">
+                    </div>
+
+                    <div class="booking-formm">
+                      <label>Enfants </label>
+                      <input type="number" class="form-control" value="0" name="enfant">
+                    </div>
+                    <br>
+                    <div class="booking-formmm">
+                      <label>Type d'hebergement </label>
+                      <div class="radios-btn">
+                        <input type="radio" class="btn" name="check" checkced="checked" id="radio" value="Auberge"
+                          onchange="essai(this.value)" /><span>Auberge</span>
+                        <input type="radio" class="btn" name="check" id="radio" value="Maison"
+                          onchange="essai(this.value)" /><span>Maison</span>
+                        <input type="radio" class="btn" name="check" id="radio" value="Camping"
+                          onchange="essai(this.value)" /><span>Camping</span>
+                        <input type="radio" class="btn" name="check" id="radio" value="Hotel"
+                          onchange="essai(this.value)" /><span>Hotel</span>
+                      </div>
+
+                      <br>
+                      <div class="booking-formm" id="choisir">
+                        <label>Nombre de chambre :</label><br>
+                        <input type="number" class="formm" value="0" name="nombrechambre">
+                      </div>
+                      <br>
+                      <div class="input-grpp">
+                        <label>Moyen De Transport</label>
+                        <form action="voyagecarte" method="POSTE">
+                          <div class="formm-row">
+                            <select name="MoyenTransport">
+                              <option value="1">Avion </option>
+                              <option value="2">Bus</option>
+                              <option value="3">Taxi</option>
+                              <option value="4">Train </option>
+                            </select>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="check-inn">
+                      <input type="checkbox" id="proposez-moi">
+                      <label for="proposez-moi">proposez-moi</label>
+                    </div>
+                    <br>
+                    <div class="booking-formm">
+                      <label>Idée Sur le Budget </label>
+                      <input type="text" class="form-control" name="budjet">
+
+                    </div>
+
+                    <div class="check-inn">
+                      <input type="checkbox" id="proposez-moi">
+                      <label for="proposez-moi">Je n'ai pas une idée</label>
+                    </div>
+                    <br>
+                    <div class="booking-formm">
+                      <label>Description</label>
+                      <textarea name="description"></textarea>
+                    </div>
+
+                  </form>
+
+                </div>
+
+
+
+                <button type="submit" class="submit-btn">valider</button>
+            </form>
+
+
+
+            <% if(demError) { %>
+              <p class="eror">
+                <%= demError%>
+              </p>
+
+              <% } %>
+                <% for (let error of validationErrors) { %>
+                  <p class="eror">
+                    <%= error.msg %>
+                  </p>
+                  <% } %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('parts/footer') %>
